@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import phone from '../assets/phone.png';
+import mail from '../assets/mail.png';
+import location from '../assets/location.png';
+---
+<Layout title="Contacto">
+	<main class="contact-page">
+		<header class="contact-hero">
+			<h1>Contacto</h1>
+			<p>Contacta con nosotros para más información sobre cursos, matrículas y servicios.</p>
+		</header>
+
+		<section class="contact-grid">
+			<div class="contact-info">
+				<h2>Información</h2>
+				<ul>
+					<li><img src={location.src} alt="Ubicación" class="ico"/> Ctra. General del Norte, 92 — La Victoria de Acentejo</li>
+					<li><img src={mail.src} alt="Email" class="ico"/> <a href="mailto:informacion@fyrescan.es">informacion@fyrescan.es</a></li>
+					<li><img src={phone.src} alt="Teléfono" class="ico"/> 922 581 351 | 664 112 707</li>
+				</ul>
+
+				<h3>Horario</h3>
+				<p>Lun - Vie: 09:00 - 20:00 · Sáb: 09:00 - 13:00</p>
+			</div>
+
+			<div class="contact-form">
+				<h2>Envíanos un mensaje</h2>
+				<form class="form" method="post" action="#" onsubmit="return false;">
+					<label>
+						<span>Nombre</span>
+						<input type="text" name="name" required />
+					</label>
+					<label>
+						<span>Email</span>
+						<input type="email" name="email" required />
+					</label>
+					<label>
+						<span>Mensaje</span>
+						<textarea name="message" rows="6" required></textarea>
+					</label>
+					<button type="submit" class="btn">Enviar</button>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<style>
+		.contact-page{ max-width:1100px; margin:2.5rem auto; padding:0 1rem; }
+		.contact-hero{ text-align:center; margin-bottom:1.5rem; }
+		.contact-hero h1{ font-family: "Outfit", sans-serif; font-size:2.25rem; margin:0 0 .5rem; }
+		.contact-hero p{ color:#556; margin:0; }
+
+		.contact-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:2rem; align-items:start; }
+		.contact-info{ background:var(--bg, #f7fbff); padding:1.25rem; border-radius:8px; }
+		.contact-info ul{ list-style:none; padding:0; margin:0 0 1rem; }
+		.contact-info li{ display:flex; align-items:center; gap:.6rem; margin:.6rem 0; }
+		.ico{ width:20px; height:20px; display:inline-block; }
+
+		.contact-form{ background:white; padding:1.25rem; border-radius:8px; box-shadow:0 6px 18px rgba(20,40,60,.06); }
+		.contact-form .form label{ display:block; margin-bottom:.75rem; margin-right:1.5rem; }
+		.contact-form .form span{ display:block; font-size:.9rem; margin-bottom:.35rem; color:#334; }
+		.contact-form input, .contact-form textarea{ width:100%; padding:.5rem .6rem; border:1px solid #d7e3ef; border-radius:6px; }
+		.btn{ background:#1696eb; color:white; border:none; padding:.6rem 1rem; border-radius:6px; cursor:pointer; }
+		@media (max-width:800px){ .contact-grid{ grid-template-columns: 1fr; } }
+	</style>
+</Layout>

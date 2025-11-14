@@ -1,0 +1,294 @@
+---
+import phone from '../assets/phone.png';
+import firma from '../assets/firma.png';
+import facebook from '../assets/facebook.png';
+import instagram from '../assets/instagram.png';
+import youtube from '../assets/youtube.png';
+import locationIcon from '../assets/location.png';
+import mailIcon from '../assets/mail.png';
+import gymIcon from '../assets/gym2.png';
+import coffeeIcon from '../assets/coffee.png';
+---
+
+<footer class="footer">
+  <div class="footer-content">
+    <!-- Sección izquierda: Logo + Descripción + Redes -->
+    <div class="footer-section footer-left">
+      <div class="footer-logo-box">
+        <img src="/LOGO.png" alt="Fyrescan Logo" class="footer-logo" />
+      </div>
+      <p class="footer-description">
+        Basándonos en la profesionalidad y experiencia, se comienza una andadura en el año 2010, convirtiéndolo el <strong>Fyrescan Centro de Formación</strong> en el número uno para la habilitación, actualización y especialización del personal de Seguridad Privada en Canarias.
+      </p>
+      <div class="footer-socials">
+  <!-- Icons imported from src/assets -->
+  <a href="#" aria-label="Facebook" class="social-icon"><img src={facebook.src} alt="Facebook" class="inline-icon" /></a>
+  <a href="#" aria-label="Instagram" class="social-icon"><img src={instagram.src} alt="Instagram" class="inline-icon" /></a>
+  <a href="#" aria-label="YouTube" class="social-icon"><img src={youtube.src} alt="YouTube" class="inline-icon" /></a>
+      </div>
+    </div>
+
+    <!-- Sección centro-izquierda: Fyrescan La Victoria -->
+    <div class="footer-section">
+      <h3>Fyrescan La Victoria</h3>
+      <div class="footer-contact">
+  <p><img src={locationIcon.src} alt="Ubicación" class="inline-icon" /> Ctra. General del Norte, 92.<br />Local 12 38380 de La Victoria de Acentejo</p>
+  <p><img src={mailIcon.src} alt="Email" class="inline-icon" /> <a href="mailto:informacion@fyrescan.es">informacion@fyrescan.es</a></p>
+  <p><img src={phone.src} alt="Teléfono" class="inline-icon" /> 922 581 351 | 664 112 707</p>
+      </div>
+      <h4>Políticas</h4>
+      <ul class="footer-links">
+        <li><a href="#">Decálogo</a></li>
+        <li><a href="#">Política de Calidad</a></li>
+        <li><a href="#">Política de Seguridad</a></li>
+        <li><a href="#">Seguridad y Salud en el Trabajo</a></li>
+        <li><a href="#">Transparencia</a></li>
+        <li><a href="#">Carta SGI a proveedores</a></li>
+      </ul>
+    </div>
+
+    <!-- Sección centro-derecha: Fyrescan Puerto de la Cruz -->
+    <div class="footer-section">
+      <h3>Fyrescan Puerto de la Cruz</h3>
+      <div class="footer-contact">
+  <p><img src={locationIcon.src} alt="Ubicación" class="inline-icon" /> Calle Robles, 5 Esquino Calle Cardón. 38400 Puerto de la Cruz</p>
+  <p><img src={mailIcon.src} alt="Email" class="inline-icon" /> <a href="mailto:informacion@fyrescan.es">informacion@fyrescan.es</a></p>
+  <p><img src={phone.src} alt="Teléfono" class="inline-icon" /> 822 711 437 | 640 363 665</p>
+  <p><img src={gymIcon.src} alt="Gimnasio" class="inline-icon" /> Gimnasio: 640 363 652</p>
+  <p><img src={coffeeIcon.src} alt="Cafetería" class="inline-icon" /> Cafetería: 623 546 121</p>
+      </div>
+      <h4>Legal</h4>
+      <ul class="footer-links">
+        <li><a href="#">Aviso Legal</a></li>
+        <li><a href="#">Política de Privacidad</a></li>
+        <li><a href="#">Política de Cookies</a></li>
+        <li><a href="#">Mapa del Sitio</a></li>
+        <li><a href="#">Accesibilidad</a></li>
+      </ul>
+    </div>
+
+    <!-- Sección derecha: Fyrescan San Isidro -->
+    <div class="footer-section">
+      <h3>Fyrescan San Isidro</h3>
+      <div class="footer-contact">
+  <p><img src={locationIcon.src} alt="Ubicación" class="inline-icon" /> Calle Isla de Gran Canario, 49. San Isidro. Granadilla de Abona</p>
+  <p><img src={mailIcon.src} alt="Email" class="inline-icon" /> <a href="mailto:informacionsur@fyrescan.es">informacionsur@fyrescan.es</a></p>
+  <p><img src={phone.src} alt="Teléfono" class="inline-icon" /> 822 718 224 | 623 453 770</p>
+      </div>
+      <h4>Accesos</h4>
+      <ul class="footer-links">
+        <li><a href="/">Fyrescan</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+        <li><a href="#">Colocación</a></li>
+        <li><a href="#">Aula</a></li>
+        <li><a href="#">Noticias</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Firma y sponsors -->
+  <div class="footer-signature">
+    <p>Copyright © 2023 Centro de Formación Fyrescan. Todos los derechos reservados. Powered by Medialife Digital Support.</p>
+    
+    <p class="funding-text">FINANCIADO POR LA UNIÓN EUROPEA CON EL PROGRAMA KIT DIGITAL POR LOS FONDOS NEXT GENERATION (EU) DEL MECANISMO DE RECUPERACIÓN Y RESILIENCIA</p>
+    
+    <div class="sponsors-logos">
+      <img src={firma.src} alt="Firma" />
+    </div>
+  </div>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+    .footer {
+      font-family: "Quicksand", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-style: normal;
+      background: #153044;
+      color: #ffffff;
+      padding: 3rem 1rem;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto 2rem;
+    }
+
+    .footer-section {
+      padding: 0 1rem;
+    }
+
+    .footer-left {
+      grid-column: 1;
+    }
+
+    .footer-logo-box {
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo {
+      max-width: 120px;
+      height: auto;
+    }
+
+    .footer-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #ece1e1;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #1381ca;
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .social-icon:hover {
+      background: #68bef7;
+    }
+
+    .footer-section h3 {
+      color: #1696eb;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      font-family: "Outfit", sans-serif;
+    }
+
+    .footer-section h4 {
+      color: #c2e6fe;
+      font-size: 0.95rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-family: "Outfit", sans-serif;
+    }
+
+    .footer-contact {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact p {
+      margin: 0.5rem 0;
+    }
+
+    .footer-contact a {
+      color: #6bc4ff;
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin: 0.5rem 0;
+    }
+
+    .footer-links a {
+      color: #86ceff;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+      color: #d7e7f1;
+    }
+
+    /* Firma y sponsors */
+    .footer-signature {
+      border-top: 1px solid #ddd;
+      padding-top: 2rem;
+      text-align: center;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .footer-signature p {
+      font-size: 0.85rem;
+      color: #ffffff;
+      margin: 0.5rem 0;
+    }
+
+    .funding-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 1rem 0;
+    }
+
+    .sponsors-logos {
+      display: flex;
+      background-color: #ffffff;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .sponsors-logos img {
+      max-height: 60px;
+      width: auto;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Inline icon used to replace emojis - update src attributes to your own images */
+    .inline-icon{
+      width: 1.05em;
+      height: 1.05em;
+      vertical-align: middle;
+      filter: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-left {
+        grid-column: auto;
+      }
+
+      .footer-section h3 {
+        font-size: 1rem;
+      }
+
+      .sponsors-logos {
+        gap: 1rem;
+      }
+
+      .sponsors-logos img {
+        max-height: 45px;
+      }
+    }
+  </style>
+</footer>

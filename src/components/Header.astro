@@ -1,3 +1,190 @@
-<header>
-    
-</header>
+---
+import logo from '../assets/LOGO.png';
+---
+
+    <header class="font-header">
+        <nav class="nav">
+            <div class="nav-left">
+                        <a class="logo-link" href="/inicio">
+                            <img class="logo" src={logo.src} alt="Logo Fyrescan" />
+                        </a>
+            </div>
+
+
+            <div class="nav-right">
+                <button id="menuBtn" class="menu-btn" aria-label="Abrir menú">☰</button>
+                <ul class="nav-links">
+                    <li><a href="/inicio">Inicio</a></li>
+                    <li><a href="/Curso">Curso</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Menú móvil desplegable -->
+        <div id="mobileMenu" class="mobile-menu" hidden>
+            <ul>
+                <li><a href="/inicio">Inicio</a></li>
+                <li><a href="/Curso">Curso</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <style>
+        /* Import Outfit from Google Fonts; adjust weights as needed */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap');
+
+        /*
+          Clase siguiendo tu patrón: .outfit-<uniquifier>
+          Aquí uso .outfit-header; si quieres otro identificador cambia el sufijo.
+        */
+                    .font-header {
+                            font-family: "Outfit", sans-serif;
+                            font-optical-sizing: auto;
+                            font-weight: 700; /* cambia a 400/700 según prefieras */
+                            font-style: normal;
+                            font-size: 16px;
+                    }
+
+        :root{
+            --bg: #cae7fbbf;
+            --accent: #074d7c;
+            --muted: #57a6dc;
+            --white: #4b78ea;
+            --border: #c3d9ef83; /* Azul oscuro para el borde */
+        }
+
+        /* Force fixed header so it does not move on scroll. Use high z-index and !important
+           in case other styles interfere. */
+            /* Make header sticky so it remains visible at the top when scrolling
+               but still occupies space in the document flow (so page content is
+               not positioned underneath it). Keep a solid background so content
+               below doesn't show through. */
+            .font-header {
+                background: var(--bg);
+                border-top: 4px solid var(--border);
+                border-bottom: 4px solid var(--border);
+                position:relative;
+                top: 0;
+                z-index: 9999;
+                width: 100%;
+                margin: 0;
+                /* ensure the header paints its own stacking context */
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                /* subtle shadow so it's visually separated */
+                box-shadow: 0 2px 8px rgba(10,10,10,0.06);
+            }
+
+        .nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.5rem;
+            height: 70px;
+        }
+
+        .nav-left, .nav-right{
+            display: flex;
+            align-items: center;
+        }
+
+            .logo{
+                /* Constrain el logo para que no desborde la altura de la barra */
+                height: 56px;
+                width: auto;
+                object-fit: contain;
+            }
+
+
+        .nav-links{
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a{
+            color: var(--muted);
+            text-decoration: none;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .menu-btn{
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 1.25rem;
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 768px){
+            /* Mobile */
+            .nav-left{ order: 1; }
+            .nav-right{ order: 3; }
+            .nav-links{ display: none; }
+            .menu-btn{ display: inline-flex; }
+            /* smaller logo on mobile */
+            .logo{ height: 48px; width: auto; }
+            .mobile-menu{ display: none; background: var(--bg); padding: 0.5rem 1rem; }
+            .mobile-menu.open{ display: block; }
+            .mobile-menu ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.25rem; }
+            .mobile-menu a{ color: var(--white); text-decoration:none; padding:0.65rem 0.25rem; display:block; font-size: 1rem; }
+        }
+
+        /* Tablet: show inline links with adjusted sizes */
+        @media (min-width: 769px) and (max-width: 1024px){
+            .nav-links a{ padding: 0.45rem 0.6rem; font-size: 1.2rem; }
+            .logo{ height: 56px; width: auto; }
+        }
+    </style>
+
+    <script>
+        (function(){
+            const btn = document.getElementById('menuBtn');
+            const mobile = document.getElementById('mobileMenu');
+            if(!btn || !mobile) return;
+            btn.addEventListener('click', ()=>{
+                const isOpen = mobile.classList.toggle('open');
+                if(isOpen){
+                    mobile.hidden = false;
+                    btn.setAttribute('aria-expanded', 'true');
+                } else {
+                    mobile.hidden = true;
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        })();
+    </script>

@@ -1,0 +1,289 @@
+---
+import Footer from '../components/Footer.astro';
+import Seccion from '../components/Seccion.astro';
+import Layout from '../layouts/Layout.astro';
+import carouselImg1 from '../assets/uno.jpg';
+import carouselImg2 from '../assets/dos.jpg';
+import carouselImg3 from '../assets/tres.jpg';
+import carouselImg4 from '../assets/cuatro.jpg';
+import gymImg from '../assets/gym.jpg';
+import Aleman from '../assets/aleman.jpg';
+import nube from '../assets/trabajanube.jpg';
+import Ofi from '../assets/Ofi.png';
+
+---
+
+<Layout title="Curso">
+  <!-- Banner tipo Nav: solo slideshow, flechas blancas y texto centrado -->
+  <section class="tienda-hero">
+    <div class="tienda-slideshow">
+      <img src={carouselImg1.src} alt="Carousel 1" class="tienda-img active" />
+      <img src={carouselImg2.src} alt="Carousel 2" class="tienda-img" />
+      <img src={carouselImg3.src} alt="Carousel 3" class="tienda-img" />
+      <img src={carouselImg4.src} alt="Carousel 4" class="tienda-img" />
+      <button class="tienda-arrow left" id="prevBtn" aria-label="Anterior">❮</button>
+      <button class="tienda-arrow right" id="nextBtn" aria-label="Siguiente">❯</button>
+      <div class="tienda-hero-text">
+  <h1>Cursos</h1>
+      </div>
+    </div>
+  </section>
+  <!-- Beneficios debajo de otros cursos -->
+  <section class="beneficios-cursos">
+    <div class="beneficio">
+      <img src="https://img.icons8.com/ios/50/000000/money-transfer.png" alt="Pago" />
+      <div>
+        <h4>FACILIDADES DE PAGO</h4>
+        <p>Si estás interesado en algún curso, te ofrecemos facilidades de pago para que la formación no tenga obstáculos.</p>
+      </div>
+    </div>
+    <div class="beneficio">
+      <img src="https://img.icons8.com/ios/50/000000/help.png" alt="Dudas" />
+      <div>
+        <h4>¿TIENES DUDAS?</h4>
+        <p>Nuestro equipo de docentes te atenderá para resolverlas y así ayudarte a alcanzar tus objetivos y metas.</p>
+      </div>
+    </div>
+    <div class="beneficio">
+      <img src="https://img.icons8.com/ios/50/000000/approval.png" alt="Satisfacción" />
+      <div>
+        <h4>100% SATISFACCIÓN</h4>
+        <p>Grupo Fyrescan acumula décadas en el sector de la formación, logrando la confianza de sus alumnas y alumnos.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Courses section (3 columns) -->
+  <section class="courses-section">
+    <div class="course-card">
+      <div class="course-image" style={`background-image: url(${Aleman.src})`}></div>
+      <h3>Alemán A2</h3>
+      <p><strong>Horario:</strong> 08:30 a 13:30<br /><strong>Fechas:</strong> 21 de julio al 08 de septiembre</p>
+      <button class="btn-leer">Leer más</button>
+    </div>
+    <div class="course-card">
+      <div class="course-image" style={`background-image: url(${Ofi.src})`}></div>
+      <h3>Ofimática: Aplicaciones Informáticas de Gestión</h3>
+      <p><strong>Modalidad:</strong> Teleformación (50 horas)<br /><strong>Destinado a:</strong> Personas trabajadoras</p>
+      <button class="btn-leer">Leer más</button>
+    </div>
+    <div class="course-card">
+      <div class="course-image" style={`background-image: url(${nube.src})`}></div>
+      <h3>Trabaja en la Nube eCloud</h3>
+      <p><strong>Fechas:</strong> 08/09/2025 al 10/10/2025<br /><strong>Horario:</strong> 09:00 - 14:00</p>
+      <button class="btn-leer">Leer más</button>
+    </div>
+  </section>
+
+  <!-- Other products section -->
+  <section class="other-products">
+    <div class="other-bg" style={`background-image: url(${carouselImg4.src})`}>
+      <h2>Otros Productos de Nuestra Tienda</h2>
+    </div>
+  </section>
+
+  <!-- Centros Fyrescan section -->
+  <section class="centros-section">
+    <h2>Centros Fyrescan</h2>
+    <div class="centros-grid">
+      <div class="centro-circle">La Victoria</div>
+      <div class="centro-circle">San Isidro</div>
+      <div class="centro-circle">Puerto de la Cruz</div>
+    </div>
+  </section>
+
+  <!-- Gym F2.0 section -->
+  <section class="gym-section">
+    <h2>Conoce nuestro Gimnasio <span class="f20">F2.0</span></h2>
+    <div class="gym-content">
+      <img src={gymImg.src} alt="Gimnasio F2.0" class="gym-image" />
+      <p>Instalaciones de última generación equipadas para tu entrenamiento físico y mental.</p>
+    </div>
+  </section>
+  <Seccion />
+  <Footer />
+</Layout>
+
+<style>
+  /* Tienda Hero Banner */
+  .tienda-hero {
+    width: 100%;
+    height: 70vh;
+    min-height: 340px;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+  }
+  .tienda-slideshow {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .tienda-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    top: 0; left: 0;
+  }
+  .tienda-img.active { opacity: 1; z-index: 1; }
+  .tienda-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.7rem 1.2rem;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+    transition: background: 0.2s;
+    user-select: none;
+  }
+  .tienda-arrow.left { left: 2rem; }
+  .tienda-arrow.right { right: 2rem; }
+  .tienda-arrow:hover { background: rgba(7, 12, 95, 0.6); }
+  .tienda-hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+  }
+  .tienda-hero-text h1 {
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.45);
+    letter-spacing: 1px;
+  }
+  @media (max-width: 900px) {
+    .tienda-hero { height: 45vh; min-height: 220px; }
+    .tienda-arrow.left { left: 1rem; right: auto; font-size: 1.7rem; padding: 0.5rem 0.9rem; }
+    .tienda-arrow.right { right: 1rem; left: auto; font-size: 1.7rem; padding: 0.5rem 0.9rem; }
+    .tienda-hero-text h1 { font-size: 2rem; }
+    .beneficios-cursos { flex-direction: column; align-items: center; gap: 1.5rem; }
+  }
+  
+  /* Beneficios debajo de otros cursos */
+  .beneficios-cursos {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2.5rem auto 0 auto;
+    padding: 0 1rem 2rem 1rem;
+    flex-wrap: wrap;
+  }
+  .beneficio {
+    flex: 1 1 0;
+    min-width: 250px;
+    max-width: 350px;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    padding: 1rem;
+  }
+  .beneficio img {
+    width: 48px;
+    height: 48px;
+    margin-top: 0.2rem;
+    filter: grayscale(1) brightness(0.5);
+  }
+  .beneficio h4 {
+    margin: 0 0 0.3rem 0;
+    font-family: 'Outfit', sans-serif;
+    color: #555;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .beneficio p {
+    margin: 0;
+    color: #555;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+  }
+
+
+  /* Courses cards */
+  .courses-section { max-width: 1200px; margin: 3rem auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .course-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+  .course-image { width: 100%; height: 200px; background-size: cover; background-position: center; }
+  .course-card h3 { font-family: 'Outfit', sans-serif; font-size: 1.35rem; margin: 1rem 1rem 0.5rem; }
+  .course-card p { font-family: 'Quicksand', sans-serif; font-size: 0.95rem; color: #555; margin: 0 1rem 1rem; line-height: 1.6; }
+  .btn-leer { background: #000; color: white; border: none; padding: 0.6rem 1.4rem; border-radius: 999px; font-weight: 600; cursor: pointer; margin-left: 1rem; margin-bottom: 1rem; }
+  .btn-leer:hover { background: #333; }
+
+  /* Other products */
+  .other-products { margin: 4rem 0; }
+  .other-bg { height: 40vh; min-height: 280px; background-size: cover; background-position: center; background-attachment: fixed; display: flex; align-items: center; justify-content: center; position: relative; }
+  .other-bg::before { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
+  .other-bg h2 { position: relative; z-index: 2; font-family: 'Outfit', sans-serif; color: white; font-size: 2.2rem; text-align: center; }
+
+  /* Centros section */
+  .centros-section { padding: 3rem 1rem; text-align: center; background: #f9f9f9; }
+  .centros-section h2 { font-family: 'Outfit', sans-serif; color: #555; margin-bottom: 2rem; }
+  .centros-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+  .centro-circle { width: 180px; height: 180px; background: #0099cc; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-family: 'Outfit', sans-serif; font-size: 1.4rem; color: white; font-weight: 600; text-align: center; padding: 1rem; }
+
+  /* Gym section */
+  .gym-section { max-width: 1100px; margin: 4rem auto; padding: 0 1rem; text-align: center; }
+  .gym-section h2 { font-family: 'Outfit', sans-serif; color: #555; font-size: 2rem; margin-bottom: 1.5rem; }
+  .f20 { color: #0099cc; font-weight: 700; }
+  .gym-content { text-align: center; }
+  .gym-image { width: 100%; max-width: 800px; border-radius: 8px; }
+  .gym-content p { margin-top: 1rem; font-family: 'Quicksand', sans-serif; color: #666; }
+
+  @media (max-width: 900px) {
+    .tienda-hero { height: 45vh; min-height: 220px; }
+    .tienda-arrow { font-size: 1.7rem; left: 1rem; right: 1rem; padding: 0.5rem 0.9rem; }
+    .tienda-hero-text h1 { font-size: 2rem; }
+    .centros-grid { grid-template-columns: 1fr; }
+    .centro-circle { width: 150px; height: 150px; }
+  }
+</style>
+<script>
+(function(){
+  const slides = document.querySelectorAll('.tienda-img');
+  const prev = document.getElementById('prevBtn');
+  const next = document.getElementById('nextBtn');
+  if (!slides.length || !prev || !next) return;
+  let current = 0;
+  let timer = null;
+  function show(idx) {
+    slides.forEach(img => img.classList.remove('active'));
+    slides[idx].classList.add('active');
+  }
+  function nextImg() {
+    current = (current + 1) % slides.length;
+    show(current);
+    reset();
+  }
+  function prevImg() {
+    current = (current - 1 + slides.length) % slides.length;
+    show(current);
+    reset();
+  }
+  function auto() {
+    timer = setInterval(nextImg, 4000);
+  }
+  function reset() {
+    if (timer) clearInterval(timer);
+    auto();
+  }
+  prev.addEventListener('click', prevImg);
+  next.addEventListener('click', nextImg);
+  auto();
+})();
+</script>

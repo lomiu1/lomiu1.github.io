@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import blogImg1 from '../assets/blog1.jpg';
+import blogImg2 from '../assets/blog2.jpg';
+import blogImg3 from '../assets/blog3.jpg';
+import blogImg4 from '../assets/blog4.jpg';
+import blogImg5 from '../assets/blog5.jpg';
+import blogImg6 from '../assets/blog6.png';
+
+// Simulación de entradas de blog
+const posts = [
+  {
+    title: "Bienvenido a nuestro Blog",
+    date: "2025-11-12",
+    excerpt: "Descubre novedades, consejos y noticias sobre nuestros cursos y formación.",
+    slug: "bienvenido-blog",
+    author: "Equipo Fyrescan",
+    image: blogImg1
+  },
+  {
+    title: "¿Por qué formarte con nosotros?",
+    date: "2025-10-28",
+    excerpt: "Te contamos las ventajas de elegir Fyrescan para tu desarrollo profesional.",
+    slug: "ventajas-fyrescan",
+    author: "Marta González",
+    image: blogImg2
+  },
+  {
+    title: "Cómo elegir el curso ideal para ti",
+    date: "2025-10-10",
+    excerpt: "¿No sabes qué curso escoger? Te damos algunos consejos para tomar la mejor decisión según tus intereses y objetivos.",
+    slug: "elegir-curso-ideal",
+    author: "Luis Pérez",
+    image: blogImg3
+  },
+  {
+    title: "Historias de éxito: nuestros alumnos opinan",
+    date: "2025-09-25",
+    excerpt: "Conoce testimonios reales de personas que han transformado su vida profesional gracias a nuestra formación.",
+    slug: "historias-exito",
+    author: "Equipo Fyrescan",
+    image: blogImg4
+  },
+  {
+    title: "Tendencias en formación online para 2026",
+    date: "2025-09-10",
+    excerpt: "Descubre las nuevas tendencias y tecnologías que marcarán el futuro de la educación a distancia.",
+    slug: "tendencias-formacion-online",
+    author: "Ana Torres",
+    image: blogImg5
+  },
+  {
+    title: "Consejos para estudiar desde casa y no rendirse",
+    date: "2025-08-30",
+    excerpt: "Te compartimos trucos y hábitos para mantener la motivación y el enfoque cuando estudias online.",
+    slug: "consejos-estudiar-casa",
+    author: "Carlos Ruiz",
+    image: blogImg6
+  }
+];
+---
+
+<Layout title="Blog">
+  <Nav />
+  <main class="blog-main">
+    <h1>Blog</h1>
+    <ul class="blog-list">
+      {posts.map(post => (
+        <li class="blog-item">
+          <div class="blog-img-wrap">
+            <img src={post.image.src} alt={post.title} class="blog-img" loading="lazy" />
+          </div>
+          <div class="blog-content">
+            <h2>{post.title}</h2>
+            <div class="blog-meta">
+              <span class="blog-date">{post.date}</span>
+              <span class="blog-author">por {post.author}</span>
+            </div>
+            <p>{post.excerpt}</p>
+            <a href={`/blog/${post.slug}`} class="blog-link">Leer más</a>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+.blog-main {
+  max-width: 1050px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+.blog-list {
+  list-style: none;
+  padding: 0;
+}
+.blog-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.blog-img-wrap {
+  min-width: 220px;
+  max-width: 260px;
+  width: 32%;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+}
+.blog-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.blog-content {
+  padding: 1.2rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.blog-meta {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 1.2rem;
+}
+.blog-author {
+  font-style: italic;
+}
+.blog-link {
+  display: inline-block;
+  margin-top: 0.7rem;
+  color: #0099cc;
+  text-decoration: none;
+  font-weight: 600;
+}
+.blog-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 700px) {
+  .blog-item {
+    flex-direction: column;
+  }
+  .blog-img-wrap {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+  }
+  .blog-content {
+    padding: 1rem;
+  }
+}
+</style>

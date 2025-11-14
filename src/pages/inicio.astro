@@ -1,0 +1,136 @@
+---
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+import Layout from '../layouts/Layout.astro';
+import Seccion from '../components/Seccion.astro';
+import heroImg from '../assets/cuatro.jpg';
+import aboutMain from '../assets/tres.jpg';
+import thumbA from '../assets/uno.jpg';
+import thumbB from '../assets/dos.jpg';
+import thumbC from '../assets/cuatro.png';
+---
+
+<Layout title="Inicio">
+		<Nav />
+
+		<section class="intro-block">
+		<h1 class="intro-title">Centro de Formación en Seguridad - Grupo Fyrescan</h1>
+		<p>
+			En <strong><em>Grupo Fyrescan</em></strong>, entendemos la importancia de contar con un centro de formación en seguridad que garantice la excelencia y la profesionalidad. Por eso, nuestro centro de formación en seguridad ofrece programas completos y actualizados que se adaptan a las necesidades de cada estudiante y profesional del sector.
+		</p>
+		<p>
+			En primer lugar, contamos con instructores expertos que poseen una amplia experiencia en el campo de la seguridad y la protección. Además, nuestros cursos están diseñados para ofrecer una combinación ideal entre teoría y práctica, lo cual es fundamental para una formación integral. Por otro lado, nuestras instalaciones están equipadas con tecnología de vanguardia, lo que permite una experiencia de aprendizaje efectiva y realista.
+		</p>
+
+		<h2 class="intro-subtitle">Compromiso por la Formación en Seguridad</h2>
+		<p>
+			Es importante destacar que en nuestro centro de formación en seguridad, la flexibilidad es clave. Por eso, ofrecemos horarios adaptados y modalidades tanto presenciales como online, facilitando el acceso al aprendizaje desde cualquier lugar. Además, nuestros programas están reconocidos a nivel nacional e internacional, lo que asegura que los certificados obtenidos en <strong><em>Grupo Fyrescan</em></strong> tengan un valor añadido en el mercado laboral.
+		</p>
+		<p>
+			Por otro lado, no solo nos enfocamos en la formación inicial, sino que también ofrecemos cursos de actualización y especialización en áreas específicas de la seguridad. Así, nuestros alumnos pueden mantenerse al día con las últimas tendencias y normativas del sector. No obstante, la verdadera ventaja de estudiar en nuestro centro es la red de contactos que se forma. Participar en nuestros cursos significa formar parte de una comunidad comprometida con la excelencia y la seguridad.
+		</p>
+		<p>
+			En conclusión, si estás buscando un centro de formación en seguridad que ofrezca calidad, innovación y respaldo profesional, <strong><em>Grupo Fyrescan</em></strong> es la mejor elección. Ponte en contacto con nosotros y da el siguiente paso para fortalecer tu carrera en el ámbito de la seguridad.
+		</p>
+	</section>
+
+	<!-- About / multimedia collage (right) -->
+	<section class="about-multimedia">
+		<div class="about-text">
+			<p>Sobre Nosotros</p>
+			<h3>Compromiso por la excelencia educativa en seguridad</h3>
+			<p><em>Desde Fyrescan</em> ofrecemos Formación Profesional, actualizada, personal e individualizada, y con un alto grado de compromiso, para nuestros/as alumnos/as, empresas u organismos clientes, formando en seguridad privada en Canarias.</p>
+			<ul class="about-list">
+				<li>Aspiramos a ser centro de referencia en Canarias</li>
+				<li>Misión: Formar y orientar a nuestro alumnado</li>
+				<li>Valores: Calidad, Liderazgo y Compromiso</li>
+				<li>Formación Profesional, actualizada y personal</li>
+				<li>Gestión empresarial bajo un sistema de excelencia</li>
+			</ul>
+		</div>
+		<div class="about-media">
+			<div class="media-main" style={`background-image:url(${aboutMain.src})`}>
+				<button class="play">▶</button>
+			</div>
+			<div class="media-thumb top-left" style={`background-image:url(${thumbA.src})`}></div>
+			<div class="media-thumb top-right" style={`background-image:url(${thumbB.src})`}></div>
+			<div class="media-thumb bottom" style={`background-image:url(${thumbC.src})`}></div>
+		</div>
+	</section>
+
+	<!-- Hero banner placed near the bottom (penultimate) -->
+	<section class="hero-banner" role="region" aria-label="Hero">
+		<div class="hero-bg" style={`background-image: url(${heroImg.src})`}></div>
+		<div class="hero-overlay">
+			<h2>Brindamos Oportunidades</h2>
+			<p>Basándonos en la profesionalidad y experiencia, se comienza una andadura en el año 2010, convirtiendo el <em>Fyrescan Centro de Formación en Seguridad</em> en el número uno para la habilitación, actualización y especialización del personal de Seguridad Privada en Canarias.</p>
+		</div>
+	</section>
+	<Seccion />
+	<Footer />
+</Layout>
+
+<style>
+	.intro-block {
+		max-width: 1100px;
+		margin: 2.5rem auto 2rem auto;
+		padding: 0 1.5rem;
+		text-align: center;
+	}
+	.intro-title {
+		font-family: 'Outfit', sans-serif;
+		font-size: 2.7rem;
+		font-weight: 600;
+		margin-bottom: 2.2rem;
+		margin-top: 1.5rem;
+		letter-spacing: 0.01em;
+	}
+	.intro-subtitle {
+		font-family: 'Outfit', sans-serif;
+		font-size: 2.1rem;
+		font-weight: 500;
+		margin: 2.5rem 0 1.5rem 0;
+		letter-spacing: 0.01em;
+	}
+	.intro-block p {
+		font-family: 'Quicksand', sans-serif;
+		font-size: 1.18rem;
+		color: #444;
+		margin: 0 0 1.5rem 0;
+		line-height: 1.7;
+		text-align: justify;
+	}
+	@media (max-width: 700px) {
+		.intro-title { font-size: 1.5rem; }
+		.intro-subtitle { font-size: 1.15rem; }
+		.intro-block { padding: 0 0.5rem; }
+		.intro-block p { font-size: 1rem; }
+	}
+</style>
+
+<style>
+	/* Hero banner */
+	.hero-banner{ position: relative; height: 48vh; min-height: 300px; display:flex; align-items:center; justify-content:center; color: #fff; }
+	.hero-bg{ position:absolute; inset:0; background-size:cover; background-position:center; filter:contrast(.9) brightness(.5); }
+	.hero-overlay{ position:relative; z-index:2; text-align:center; max-width:1100px; padding: 2rem 1rem; }
+	.hero-overlay h2{ font-family: 'Outfit', sans-serif; font-size:2.6rem; margin:0 0 .6rem; }
+	.hero-overlay p{ font-family: 'Quicksand', sans-serif; max-width:900px; margin:0 auto; font-size:1.05rem; }
+
+	/* About multimedia */
+	.about-multimedia{ max-width:1200px; margin:3rem auto; display:grid; grid-template-columns:1fr 560px; gap:2rem; align-items:center; padding:0 1rem }
+	.about-text small{ display:block; color:#666; margin-bottom:.5rem }
+	.about-text h3{ font-family:'Outfit',sans-serif; color:#2f6a77; margin-top:0 }
+	.about-media{ position:relative }
+	.media-main{ width:100%; height:420px; background-size:cover; background-position:center; border:6px solid rgba(47,106,119,0.9); box-shadow:0 6px 18px rgba(0,0,0,0.08); border-radius:6px; position:relative }
+	.play{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:rgba(255,255,255,0.2); color:white; border:none; font-size:2rem; width:84px; height:84px; border-radius:50% }
+	.media-thumb{ position:absolute; width:140px; height:90px; background-size:cover; background-position:center; border:6px solid rgba(47,106,119,0.9); box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+	.media-thumb.top-left{ left:-60px; top:-40px }
+	.media-thumb.top-right{ right:-20px; top:-60px; width:140px; height:90px }
+	.media-thumb.bottom{ right:-10px; bottom:-40px; width:220px; height:120px }
+
+	@media (max-width:900px){
+		.about-multimedia{ grid-template-columns:1fr; }
+		.media-main{ height:300px }
+		.media-thumb{ display:none }
+	}
+</style>

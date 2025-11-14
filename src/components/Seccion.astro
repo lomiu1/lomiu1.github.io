@@ -1,0 +1,31 @@
+---
+---
+
+<section class="newsletter-section">
+		<h3>Descubre nuestras novedades</h3>
+		<div class="newsletter-card">
+			<div class="newsletter-left">
+				<h4>¿Quieres conocer nuestras novedades?</h4>
+				<p>Introduce tu email y recibirás novedades del Centro de Formación Fyrescan</p>
+			</div>
+			<div class="newsletter-right">
+				<input type="email" placeholder="Tu email aquí" aria-label="Email" />
+				<button class="btn-sub">✉ Suscribirse</button>
+			</div>
+		</div>
+	</section>
+    <style>
+
+        .newsletter-section{ padding: 2.5rem 1rem; background: #fff; }
+        .newsletter-section h3{ text-align:center; color: #2f6a77; font-family:'Outfit',sans-serif; margin-bottom:1.4rem; }
+        .newsletter-card{ max-width:1100px; margin:0 auto; background:#fff; padding:1.5rem; border-radius:8px; box-shadow:0 8px 28px rgba(10,20,30,0.06); display:flex; gap:1rem; align-items:center; }
+        .newsletter-left{ flex:1 }
+        .newsletter-right{ display:flex; gap:.75rem; align-items:center }
+        .newsletter-right input{ padding:.8rem 1rem; border-radius:999px; border:2px solid #cfe3ea; min-width:300px }
+        .btn-sub{ background:#2f6a77; color:white; border:none; padding:.7rem 1.1rem; border-radius:999px; cursor:pointer }
+
+        @media (max-width:900px){
+            .newsletter-card{ flex-direction:column; align-items:stretch }
+            .newsletter-right{ justify-content:center }
+        }
+    </style>
