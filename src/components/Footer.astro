@@ -275,32 +275,57 @@ import coffeeIcon from '../assets/coffee.png';
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      .footer { width: 100vw; min-width: 0; }
-      .footer-content { width: 100vw; min-width: 0; }
-      .footer-content { grid-template-columns: 1fr; }
-
-      .footer-left {
-        grid-column: auto;
-      }
-
-      .footer-section h3 {
-        font-size: 1rem;
-      }
-
-      .sponsors-logos {
-        gap: 1rem;
-      }
-
-      .sponsors-logos img {
-        max-height: 45px;
-      }
+    /* Desktop: 1025px+ */
+    @media (min-width: 1025px) {
+      .footer { width: 100%; }
+      .footer-content { width: 100%; grid-template-columns: repeat(4, 1fr); }
     }
 
-    @media (max-width: 400px) {
-      .footer { width: 100vw; min-width: 0; }
-      .footer-logo { max-width: 80px; }
-      .footer-section h3 { font-size: 0.9rem; }
+    /* Tablet: 768px - 1024px */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .footer { width: 100vw; min-width: 0; padding: 2.5rem 1rem; }
+      .footer-content { width: 100vw; min-width: 0; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 0 0.5rem; }
+      .footer-left { grid-column: 1 / -1; }
+      .footer-section h3 { font-size: 1rem; }
+      .sponsors-logos { gap: 1rem; }
+      .sponsors-logos img { max-height: 45px; }
+    }
+
+    /* Mobile large (phablet): 600px - 767px */
+    @media (min-width: 600px) and (max-width: 767px) {
+      .footer { width: 100vw; min-width: 0; padding: 2rem 0.8rem; box-sizing: border-box; }
+      .footer-content { width: 100vw; min-width: 0; grid-template-columns: 1fr; gap: 1.2rem; padding: 0 0.4rem; box-sizing: border-box; }
+      .footer-left { grid-column: auto; }
+      .footer-section { padding: 0 0.5rem; }
+      .footer-section h3 { font-size: 0.95rem; }
+      .footer-logo { max-width: 100px; }
+      .footer-description { font-size: 0.9rem; }
+      .sponsors-logos { gap: 0.8rem; }
+      .sponsors-logos img { max-height: 40px; }
+    }
+
+    /* Mobile small: 375px - 599px */
+    @media (min-width: 375px) and (max-width: 599px) {
+      .footer { width: 100vw; min-width: 0; padding: 1.5rem 0.6rem; box-sizing: border-box; }
+      .footer-content { width: 100vw; min-width: 0; grid-template-columns: 1fr; gap: 1rem; padding: 0 0.3rem; box-sizing: border-box; }
+      .footer-left { grid-column: auto; }
+      .footer-section { padding: 0 0.4rem; }
+      .footer-section h3 { font-size: 0.85rem; margin-bottom: 0.8rem; }
+      .footer-section h4 { font-size: 0.8rem; margin-top: 1.2rem; margin-bottom: 0.5rem; }
+      .footer-logo { max-width: 75px; }
+      .footer-description { font-size: 0.85rem; line-height: 1.5; }
+      .footer-contact { font-size: 0.8rem; line-height: 1.6; }
+      .footer-contact p { margin: 0.4rem 0; }
+      .footer-links { padding: 0; margin: 0; }
+      .footer-links li { margin: 0.35rem 0; }
+      .footer-links a { font-size: 0.8rem; }
+      .footer-socials { gap: 0.8rem; }
+      .social-icon { width: 35px; height: 35px; }
+      .sponsors-logos { gap: 0.5rem; }
+      .sponsors-logos img { max-height: 35px; }
+      .footer-signature { padding-top: 1.5rem; }
+      .footer-signature p { font-size: 0.75rem; margin: 0.3rem 0; }
+      .funding-text { font-size: 0.7rem; }
     }
   </style>
 </footer>

@@ -153,33 +153,57 @@ import logo from '../assets/LOGO.png';
             margin-right: 0.5rem;
         }
 
-        /* Mobile styles */
-        @media (max-width: 768px){
+        /* Desktop: 1025px+ */
+        @media (min-width: 1025px){
+            .font-header { width: 100%; }
+            .nav { width: 100%; max-width: 1400px; }
+            .nav-links{ display: flex; }
+            .menu-btn{ display: none; }
+            .logo{ height: 56px; width: auto; }
+            .nav-links a{ font-size: 1.2rem; padding: 0.5rem; }
+        }
+
+        /* Tablet: 768px - 1024px */
+        @media (min-width: 768px) and (max-width: 1024px){
             .font-header { width: 100vw; min-width: 0; }
-            .nav { width: 100vw; min-width: 0; }
+            .nav { width: 100vw; min-width: 0; padding: 0.4rem 0.5rem; }
+            .nav-links{ display: flex; gap: 1.5rem; }
+            .menu-btn{ display: none; }
+            .logo{ height: 50px; width: auto; }
+            .nav-links a{ font-size: 1rem; padding: 0.4rem 0.4rem; }
+            .mobile-menu{ display: none; }
+        }
+
+        /* Mobile large (phablet): 600px - 767px */
+        @media (min-width: 600px) and (max-width: 767px){
+            .font-header { width: 100vw; min-width: 0; }
+            .nav { width: 100vw; min-width: 0; padding: 0.3rem 0.5rem; height: 60px; }
             .nav-left{ order: 1; }
             .nav-right{ order: 3; }
             .nav-links{ display: none; }
-            .menu-btn{ display: inline-flex; }
-            /* smaller logo on mobile */
-            .logo{ height: 48px; width: auto; }
-            .mobile-menu{ display: none; background: var(--bg); padding: 0.5rem 1rem; }
+            .menu-btn{ display: inline-flex; font-size: 1.1rem; margin-right: 0.3rem; }
+            .logo{ height: 45px; width: auto; }
+            .mobile-menu{ display: none; background: var(--bg); padding: 0.4rem 0.8rem; border-top: 2px solid var(--border); }
             .mobile-menu.open{ display: block; }
-            .mobile-menu ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.25rem; }
-            .mobile-menu a{ color: var(--white); text-decoration:none; padding:0.65rem 0.25rem; display:block; font-size: 1rem; }
+            .mobile-menu ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.15rem; }
+            .mobile-menu a{ color: var(--white); text-decoration:none; padding:0.5rem 0.2rem; display:block; font-size: 0.95rem; font-weight: 500; }
+            .mobile-menu a:hover{ color: var(--accent); }
         }
 
-        @media (max-width: 400px){
-            .font-header { width: 100vw; min-width: 0; }
-            .nav { width: 100vw; min-width: 0; }
-            .logo{ height: 36px; }
-            .nav-links a{ font-size: 1rem; }
-        }
-
-        /* Tablet: show inline links with adjusted sizes */
-        @media (min-width: 769px) and (max-width: 1024px){
-            .nav-links a{ padding: 0.45rem 0.6rem; font-size: 1.2rem; }
-            .logo{ height: 56px; width: auto; }
+        /* Mobile small: 375px - 599px */
+        @media (min-width: 375px) and (max-width: 599px){
+            .font-header { width: 100vw; min-width: 0; box-sizing: border-box; }
+            .nav { width: 100vw; min-width: 0; padding: 0.25rem 0.4rem; height: 55px; box-sizing: border-box; }
+            .nav-left{ order: 1; }
+            .nav-right{ order: 3; }
+            .nav-links{ display: none; }
+            .menu-btn{ display: inline-flex; font-size: 1.05rem; margin-right: 0.2rem; }
+            .logo{ height: 40px; width: auto; }
+            .mobile-menu{ display: none; background: var(--bg); padding: 0.3rem 0.6rem; border-top: 2px solid var(--border); }
+            .mobile-menu.open{ display: block; }
+            .mobile-menu ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.1rem; }
+            .mobile-menu a{ color: var(--white); text-decoration:none; padding:0.45rem 0.15rem; display:block; font-size: 0.9rem; font-weight: 500; }
+            .mobile-menu a:hover{ color: var(--accent); }
         }
     </style>
 
